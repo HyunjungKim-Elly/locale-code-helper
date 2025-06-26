@@ -1,17 +1,28 @@
 {
   "name": "locale-code-helper",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A helper library to parse locale codes like en-US",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js" 
+    }
+  },
+  "./*": "./dist/*",
+  "files": ["dist"],
   "scripts": {
     "build": "tsup src/index.ts --dts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx tsx ./test.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["locale", "language", "country", "code"],
+  "author": "Hyunjung Kim",
+  "license": "MIT",
+  "type": "module",
   "devDependencies": {
+    "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
-  }
+  } 
 }
